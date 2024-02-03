@@ -4,7 +4,7 @@ const app = express()
 const VERSION = process.env.VERSION
 
 // get modules here
-
+const v1FormsModule = require('../modules/v1/forms/forms')
 
 // setting body-parser
 app.use(bodyParser.json());
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 console.log("VERSION", VERSION)
 
 // use the modules here
-
+app.use('/v1/forms', v1FormsModule)
 
 // training
 app.get('/testing', (req, res) => {
